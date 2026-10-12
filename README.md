@@ -11,6 +11,10 @@ For torchvision's ViT-B/16 at 224 x 224 pixels:
 [batch, 197 tokens, 768 channels] -- remove class token --> [batch, 196 patches, 768 channels] -- reshape 196 = 14 x 14 --> [batch, 768 channels, 14, 14]
 ```
 
+Each of the 196 patch tokens represents one 16 x 16 input region. Restoring
+their 14 x 14 order recovers the image's spatial layout without changing the
+learned token values or their 768-channel embeddings.
+
 Grad-CAM then works normally: spatially average the gradients to obtain one
 weight per channel, compute the weighted activation sum, apply ReLU, upsample,
 and normalize.
