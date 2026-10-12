@@ -8,13 +8,7 @@ and the patch tokens are reshaped back into their 2-D grid.
 For torchvision's ViT-B/16 at 224 x 224 pixels:
 
 ```text
-[batch, 197 tokens, 768 channels]
-             | remove class token
-             v
-[batch, 196 patches, 768 channels]
-             | reshape 196 = 14 x 14
-             v
-[batch, 768 channels, 14, 14]
+[batch, 197 tokens, 768 channels] -- remove class token --> [batch, 196 patches, 768 channels] -- reshape 196 = 14 x 14 --> [batch, 768 channels, 14, 14]
 ```
 
 Grad-CAM then works normally: spatially average the gradients to obtain one
