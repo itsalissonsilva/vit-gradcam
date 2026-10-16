@@ -1,11 +1,12 @@
 # Grad-CAM for Vision Transformers
 
-Following the model-visualization direction established by Zeiler and Fergus in
-[*Visualizing and Understanding Convolutional Networks*](https://arxiv.org/abs/1311.2901),
-this repository adapts the usual Grad-CAM calculation to a Vision Transformer
-(ViT). The key difference is spatial reconstruction: a ViT layer emits a token
-sequence instead of a convolutional feature map, so the class token is removed
-and the patch tokens are reshaped back into their 2-D grid.
+[Grad-CAM](https://openaccess.thecvf.com/content_ICCV_2017/html/Selvaraju_Grad-CAM_Visual_Explanations_ICCV_2017_paper.html),
+introduced by Selvaraju et al., produces class-specific visual explanations by
+weighting feature maps with their gradients. This repository adapts that
+calculation to a Vision Transformer (ViT). The key difference is spatial
+reconstruction: a ViT layer emits a token sequence instead of a convolutional
+feature map, so the class token is removed and the patch tokens are reshaped
+back into their 2-D grid.
 
 For torchvision's ViT-B/16 at 224 x 224 pixels:
 
@@ -23,8 +24,10 @@ and normalize.
 
 ## Example output
 
-The pretrained ImageNet ViT-B/16 correctly predicts all four real food
-photographs. Each source image is shown beside its class-conditioned Grad-CAM:
+The examples use torchvision's `vit_b_16` architecture with
+`ViT_B_16_Weights.DEFAULT`, pretrained on ImageNet-1K. The model correctly
+predicts all four real food photographs. Each source image is shown beside its
+class-conditioned Grad-CAM:
 
 ![Real-food ViT Grad-CAM gallery](assets/food/gradcam_food_gallery.png)
 
