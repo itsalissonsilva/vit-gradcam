@@ -1,6 +1,6 @@
 # Grad-CAM for Vision Transformers
 
-[Grad-CAM](https://openaccess.thecvf.com/content_ICCV_2017/html/Selvaraju_Grad-CAM_Visual_Explanations_ICCV_2017_paper.html),
+[Grad-CAM](https://arxiv.org/abs/1610.02391),
 introduced by Selvaraju et al., produces class-specific visual explanations by
 weighting feature maps with their gradients. This repository adapts that
 calculation to a Vision Transformer (ViT). The key difference is spatial
