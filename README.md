@@ -1,8 +1,9 @@
 # Grad-CAM for Vision Transformers
 
 [Grad-CAM](https://arxiv.org/abs/1610.02391),
-introduced by Selvaraju et al., produces class-specific visual explanations by
-weighting feature maps with their gradients. This repository adapts that
+introduced by Selvaraju et al., was originally applied to convolutional neural
+networks (CNNs), producing class-specific visual explanations by weighting
+convolutional feature maps with their gradients. This repository adapts that
 calculation to a Vision Transformer (ViT). The key difference is spatial
 reconstruction: a ViT layer emits a token sequence instead of a convolutional
 feature map, so the class token is removed and the patch tokens are reshaped
