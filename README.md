@@ -1,6 +1,8 @@
-# Grad-CAM for Vision Transformers: small proof of concept
+# Grad-CAM for Vision Transformers
 
-This repository adapts the usual Grad-CAM calculation to a Vision Transformer
+Following the model-visualization direction established by Zeiler and Fergus in
+[*Visualizing and Understanding Convolutional Networks*](https://arxiv.org/abs/1311.2901),
+this repository adapts the usual Grad-CAM calculation to a Vision Transformer
 (ViT). The key difference is spatial reconstruction: a ViT layer emits a token
 sequence instead of a convolutional feature map, so the class token is removed
 and the patch tokens are reshaped back into their 2-D grid.
